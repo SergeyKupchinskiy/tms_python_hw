@@ -12,7 +12,7 @@ def greet(name, language ='en'):
         return f'Привет {name}'
     elif language == 'fr':
         return f'Bonjur {name}'
-    elif language == None:
+    elif language is None:
         return f'Hello {name}'
     else:
         return 'Language not supported'

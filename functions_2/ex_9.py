@@ -5,7 +5,7 @@
 
 
 def palinrom_filter(words):
-    return list(filter(lambda word: word == word[::-1], words))
+    return list(filter(lambda word: word.lower() == word.lower()[::-1], words))
 
 list_1 = ['шалаш', 'радар', 'костер', 'лампа', 'мадам', 'поход']
 list_2 = palinrom_filter(list_1)

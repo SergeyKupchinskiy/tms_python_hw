@@ -28,7 +28,7 @@ def calculate(*args, operation="+"):
                 result *= num
         elif operation == "/":
             if num == 0:
-                return ZeroDivisionError("you can't divide by zero")
+                raise ZeroDivisionError("you can't divide by zero")
             result /= num
 
     return result
@@ -41,3 +41,4 @@ print(calculate(1, 2, 3, 4,operation="**"))
 print(calculate(1, 2, 3, 4,operation="-"))
 print(calculate(operation="+"))
 print(calculate())
+print(calculate(1, 0,operation="/"))

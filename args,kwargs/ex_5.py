@@ -9,10 +9,13 @@ def print_table(**kwargs):
         print("No data given.")
         return
 
-    print(f"|{'Key':<15} | {'Value':<15}|")
-    print("-" * 35)
+    key_width = max(len("Key"), *(len(str(k)) for k in kwargs.keys()))
+    value_width = max(len("Value"), *(len(str(v)) for v in kwargs.values()))
+
+    print(f"| {'Key':<{key_width}} | {'Value':<{value_width}} |")
+    print(f"| {'-' * key_width}-|-{'-' * value_width} |")
 
     for key, value in kwargs.items():
-        print(f"|{key:<15} | {value:<15}|")
+        print(f"| {str(key):<{key_width}} | {str(value):<{value_width}} |")
 
 print_table(name="Bob", age=30, city="Amsterdam")
